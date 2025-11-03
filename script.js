@@ -5,15 +5,13 @@ function updateTasks() {
   let list = document.getElementById("list");
   list.innerHTML = ""
 
-  let li = document.createElement("li")
-
-  li.className = "flex flex-row gap-3 p-3 shadow-sm items-center justify-between"
-
-  // TODO : fix the bug : for appendChild function
-
   data.forEach(item => {
+    let li = document.createElement("li")
+    li.className = "flex flex-row gap-3 p-3 shadow-sm items-center justify-between"
     console.log(item)
+
     li.innerHTML = item.text
+
     list.appendChild(li)
   })
 
