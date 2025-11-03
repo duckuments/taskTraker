@@ -1,6 +1,6 @@
 let data = [];
 
-function createItem(text, status) {
+function createItem(text, status, index) {
   // <li>
   const li = document.createElement('li')
   li.className = "flex flex-row gap-3 p-3 shadow-sm items-center justify-between"
@@ -14,6 +14,7 @@ function createItem(text, status) {
   checkbox.type = "checkbox"
   checkbox.checked = status
   checkbox.className = "checkbox"
+  checkbox.addEventListener('change', () => changeStatusTask(index))
 
   // text
   const p = document.createElement('p')
@@ -27,6 +28,7 @@ function createItem(text, status) {
   const btn = document.createElement('button')
   btn.type = "button"
   btn.className = "btn btn-small btn-error"
+  btn.addEventListener('click', () => deleteTask(index))
 
   // icon
   const icon = document.createElement('i')
@@ -46,8 +48,8 @@ function updateTasks() {
   const list = document.querySelector('ul');
   list.innerHTML = "";
 
-  data.forEach(item => {
-    list.appendChild(createItem(item.text, item.status))
+  data.forEach((item, index) => {
+    list.appendChild(createItem(item.text, item.status, index))
   })
 
   console.log("update run", data)
@@ -62,5 +64,18 @@ function addTask() {
   })
 
   console.log("create run", data)
+  updateTasks()
+}
+
+function deleteTask(index) {
+  console.log('delete run', data, index)
+  // data = data.splice(index, 1)
+  delete data[index]
+  updateTasks()
+}
+
+function changeStatusTask(index) {
+  console.log("change status", data)
+  data[index].status = !data[index].status
   updateTasks()
 }
