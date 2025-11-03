@@ -1,6 +1,8 @@
 # Task Tracker
 
-A simple web-based task tracker built as an adaptation of the [roadmap.sh Task Tracker CLI challenge](https://roadmap.sh/projects/task-tracker-js).
+A simple web-based task tracker built as an adaptation of the [roadmap.sh Task Trackerchallenge](https://roadmap.sh/projects/task-tracker-js).
+
+level : `intermediate`
 
 ## Features
 
@@ -12,8 +14,8 @@ A simple web-based task tracker built as an adaptation of the [roadmap.sh Task T
 
 - HTML
 - JavaScript
-- Tailwind CSS (CLI)
-- DaisyUI (CLI)
+- Tailwind CSS (CDN)
+- DaisyUI (CDN)
 
 ## How to Run
 
