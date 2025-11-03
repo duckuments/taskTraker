@@ -19,6 +19,9 @@ function createItem(text, status, index) {
   // text
   const p = document.createElement('p')
   p.textContent = text
+  if (status) {
+    p.className = "line-through"
+  }
 
   // add checkbox + text into left container
   left.appendChild(checkbox)
